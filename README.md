@@ -1,5 +1,7 @@
 # Next Launch
 React app using [Launch Library API](https://launchlibrary.net/)
 
-## Concept made in Adobe XD:
-![Concept](https://i.imgur.com/JtGEE0I.png)
+LIVE: https://nextlaunch.netlify.com/
+
+## Screenshot
+![Screenshot](https://i.imgur.com/lkzRM0v.png)
