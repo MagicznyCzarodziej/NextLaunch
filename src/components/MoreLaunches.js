@@ -10,9 +10,16 @@ const StyledWrapper = styled.div`
 `;
 
 const StyledHeader = styled.header`
-  font-size: 50px;
+  background-color: #EEE;
+  color: #222;
+  font-size: 2rem;
+  font-weight: 300;
   text-align: center;
-  padding: 10px 0;
+  padding: 10px;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  @media(min-width: 900px) {
+    font-size: 4rem;
+  }
 `;
 
 export default class MoreLaunches extends Component {
