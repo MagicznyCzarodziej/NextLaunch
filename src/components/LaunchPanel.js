@@ -5,12 +5,14 @@ import LaunchDetails from './LaunchDetails';
 import LaunchImage from './LaunchImage';
 
 const StyledDiv = styled.div`
-  width: 80%;
-  display: grid;
-  grid-template-columns: 60% 1fr;
-  margin-left: auto;
-  margin-right: auto;
-  overflow: hidden;
+  @media(min-width: 900px) {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 60% 1fr;
+    overflow: hidden;
+  }
 `;
 
 export default class LaunchPanel extends Component {

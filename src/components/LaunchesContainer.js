@@ -27,12 +27,13 @@ const Launch = styled.div`
 const LaunchLabel = styled.div`
   width: 100%;
   text-align: center;
-  font-size: 40px;
+  font-size: 2.5rem;
   font-weight: 300;
   padding: 10px 0;
   background-color: rgba(255, 255, 255, 0.7);
   position: absolute;
   bottom: 0;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
 `;
 
 const StyledArrow = styled(Arrow)`
