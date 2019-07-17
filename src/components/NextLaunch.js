@@ -6,7 +6,7 @@ import ScrollArrow from './ScrollArrow';
 
 
 const StyledWrapper = styled.div`
-  max-height: 100vh;
+  height: 100vh;
   background-image: url(${background});
   background-size: cover;
   background-position: center;
