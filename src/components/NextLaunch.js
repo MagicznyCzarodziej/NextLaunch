@@ -29,12 +29,16 @@ const StyledArrow = styled(Arrow)`
 `;
 
 export default class NextLaunch extends Component {
+  handleArrowClick = () => {
+    window.scrollTo(0,document.body.scrollHeight);
+  }
+
   render() {
     return (
       <StyledWrapper>
         <StyledHeader>NEXT LAUNCH</StyledHeader>
         <LaunchPanel/>
-        <StyledArrow src={arrowDown} alt="More launches"/>
+        <StyledArrow src={arrowDown} alt="More launches" onClick={this.handleArrowClick}/>
       </StyledWrapper>
     )
   }
