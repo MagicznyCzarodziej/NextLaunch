@@ -1,6 +1,7 @@
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
 import NextLaunch from './components/NextLaunch';
+import MoreLaunches from './components/MoreLaunches';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -22,6 +23,7 @@ export default class App extends React.Component {
         <GlobalStyle/>
         <div className="App">
           <NextLaunch/>
+          <MoreLaunches/>
         </div>
       </>
     );
