@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import styled from 'styled-components';
 import background from '../assets/background.jpg';
 import LaunchPanel from './LaunchPanel';
-import ScrollArrow from './ScrollArrow';
+import Arrow from './Arrow';
+import arrowDown from '../assets/chevron-down.svg';
 
 
 const StyledWrapper = styled.div`
@@ -23,13 +24,17 @@ const StyledHeader = styled.header`
   text-align: center;
 `;
 
+const StyledArrow = styled(Arrow)`
+  margin: 10px auto;  
+`;
+
 export default class NextLaunch extends Component {
   render() {
     return (
       <StyledWrapper>
         <StyledHeader>NEXT LAUNCH</StyledHeader>
         <LaunchPanel/>
-        <ScrollArrow/>
+        <StyledArrow src={arrowDown} alt="More launches"/>
       </StyledWrapper>
     )
   }
