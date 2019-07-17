@@ -22,7 +22,7 @@ export default class MoreLaunches extends Component {
         <StyledHeader>
           MORE LAUNCHES
         </StyledHeader>
-        <LaunchesContainter/>
+        {this.props.launches && <LaunchesContainter launches={this.props.launches}/>}
       </StyledWrapper>
     )
   }

@@ -23,7 +23,7 @@ const StyledInfo = styled.div`
 
 const StyledH1 = styled.h1`
   text-transform: uppercase;
-  font-size: 75px;
+  font-size: 70px;
   font-weight: 400;
   margin: 10px 0;
 `;
@@ -42,24 +42,33 @@ const StyledP = styled.p`
 `;
 
 export default class LaunchDetails extends Component {
-  render() {
+  rawLaunchToDetails = (launch) => {
+    const { name } = launch.missions[0] || launch;
+    const { description } = launch.missions[0] || '';
+    const { date } = launch;
+    const rocketName= launch.rocket.name;
+    const location = launch.location.name;
     return (
       <StyledDiv>
-        <StyledH1>SPX CRS-18</StyledH1>
-        <StyledP>July 20, 2019 16:28:21 UTC</StyledP>
+        <StyledH1>{name}</StyledH1>
+        <StyledP>{date}</StyledP>
         <StyledInfo>
           <StyledH2>Rocket:</StyledH2>
-          <StyledP>Falcon 9 Block 5</StyledP>
+          <StyledP>{rocketName}</StyledP>
           <StyledH2>Launch from:</StyledH2>
-          <StyledP>Space Launch Complex 40, Cape Canaveral, FL</StyledP>
+          <StyledP>{location}</StyledP>
           <StyledH2>Mission description:</StyledH2>
           <StyledP>
-            SpaceX will launch the Dragon spacecraft on their 18th operational cargo delivery 
-            mission to the International Space Station. The flight is being conducted under the 
-            Commercial Resupply Services contract with NASA.
+            {description}
           </StyledP>
         </StyledInfo>
       </StyledDiv>
+    )
+  }
+
+  render() {    
+    return (
+      this.props.launches ? this.rawLaunchToDetails(this.props.launches[0]) : <StyledDiv>Loading...</StyledDiv>
     )
   }
 }

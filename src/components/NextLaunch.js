@@ -30,6 +30,7 @@ const StyledArrow = styled(Arrow)`
 
 export default class NextLaunch extends Component {
   handleArrowClick = () => {
+    if (!this.props.launches) return;
     window.scrollTo(0,document.body.scrollHeight);
   }
 
@@ -37,7 +38,7 @@ export default class NextLaunch extends Component {
     return (
       <StyledWrapper>
         <StyledHeader>NEXT LAUNCH</StyledHeader>
-        <LaunchPanel/>
+        <LaunchPanel launches={this.props.launches}/>
         <StyledArrow src={arrowDown} alt="More launches" onClick={this.handleArrowClick}/>
       </StyledWrapper>
     )

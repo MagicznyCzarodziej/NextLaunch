@@ -65,23 +65,23 @@ export default class LaunchesContainer extends Component {
     this.refs.container.scrollBy(direction === 'left' ? -SCROLL_DISTANCE : SCROLL_DISTANCE , 0);  
   }
 
+  rawLaunchesToComponents = (launch, index) => {
+    if (index === 0) return;
+    const image = launch.rocket.imageURL;
+    const { name } = launch.missions[0] || launch;
+    return (
+      <Launch image={image}>
+        <LaunchLabel>{name}</LaunchLabel>
+      </Launch>
+    )
+  }
+
   render() {
     return (
       <Container ref="container">
         {this.state.isScrollable && <StyledArrow direction="left" src={arrowLeft} alt="<" onClick={(e) => this.handleArrowClick('left', e)}/>}
         {this.state.isScrollable && <StyledArrow direction="right" src={arrowRight} alt=">" onClick={(e) => this.handleArrowClick('right', e)}/>}
-        <Launch image="https://s3.amazonaws.com/launchlibrary/RocketImages/Falcon9Block5.jpg_1920.jpg">
-          <LaunchLabel>SPX SRS-18</LaunchLabel>
-        </Launch>
-        <Launch image="https://s3.amazonaws.com/launchlibrary/RocketImages/Soyuz-FG_2560.jpg">
-          <LaunchLabel>Soyuz MS-13</LaunchLabel>
-        </Launch>
-        <Launch image="https://s3.amazonaws.com/launchlibrary/RocketImages/Falcon9Block5.jpg_1920.jpg">
-          <LaunchLabel>SPX SRS-18</LaunchLabel>
-        </Launch>
-        <Launch image="https://s3.amazonaws.com/launchlibrary/RocketImages/Soyuz-FG_2560.jpg">
-          <LaunchLabel>SPX SRS-18</LaunchLabel>
-        </Launch>
+        {this.props.launches.map(this.rawLaunchesToComponents)}
       </Container>
     )
   }

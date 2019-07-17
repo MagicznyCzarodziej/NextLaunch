@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const StyledDiv = styled.div`
   background-color: #EEE;
-  background-image: url('https://via.placeholder.com/400x800');
+  background-image: url(${(props) => props.image});
   background-size: cover;
   background-position: center;
   border-top-right-radius: 10px;
@@ -16,9 +16,7 @@ const StyledDiv = styled.div`
 export default class LaunchImage extends Component {
   render() {
     return (
-      <StyledDiv>
-
-      </StyledDiv>
+      <StyledDiv image={this.props.image}/>
     )
   }
 }
