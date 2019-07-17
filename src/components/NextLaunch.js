@@ -5,27 +5,36 @@ import LaunchPanel from './LaunchPanel';
 import Arrow from './Arrow';
 import arrowDown from '../assets/chevron-down.svg';
 
-
 const StyledWrapper = styled.div`
-  height: 100vh;
-  background-image: url(${background});
-  background-size: cover;
-  background-position: center;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
+  background-color: #000011;
+  @media(min-width: 900px) {
+    background-image: url(${background});
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
 `;
 
 const StyledHeader = styled.header`
-  padding: 20px 0;
-  font-size: 75px;
+  padding: 20px;
+  font-size: 3rem;
   font-weight: 300;
   color: #EEE;
   text-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
   text-align: center;
+  @media(min-width: 900px) {
+    font-size: 4.7rem;
+  }
 `;
 
 const StyledArrow = styled(Arrow)`
+  display: none;
   margin: 10px auto;  
+  @media(min-width: 900px) {
+    display: block;
+  }
 `;
 
 export default class NextLaunch extends Component {
